@@ -1,6 +1,6 @@
 import React from "react"
-import "./src/styles/global.css"
 import Layout from "./src/components/Layout"
+import "./src/styles/global.css"
 
 export const wrapPageElement = ({ element, props }) => {
   return (

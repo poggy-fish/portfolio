@@ -1,5 +1,6 @@
 import React from "react"
+import About from "../components/About"
 
-const IndexPage = () => <h1>index</h1>
+const IndexPage = () => <About />
 
 export default IndexPage
