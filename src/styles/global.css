@@ -6,6 +6,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  body {
+    background-color: #191919;
+  }
+
   /* 100vh minus header */
   .full-vh {
     min-height: calc(100vh - 3.5rem);

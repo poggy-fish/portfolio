@@ -22,9 +22,9 @@ export default function ProjectCard({ project }) {
   })
 
   return (
-    <article className="w-full max-w-sm bg-black my-8 mx-2 rounded-lg overflow-hidden">
+    <article className="w-full max-w-sm bg-gray-800 my-6 mx-6 rounded-lg overflow-hidden">
       {/* Project image */}
-      <div className="w-full h-2/5">
+      <div className="w-full">
         <GatsbyImage
           image={siteImage}
           alt={title}
@@ -34,7 +34,7 @@ export default function ProjectCard({ project }) {
       </div>
 
       {/* Text Section */}
-      <section className="p-4 flex flex-col h-3/5">
+      <section className="p-4 ">
         {/* Title & Desc */}
         <h3 className="text-white mb-2 text-xl">{title}</h3>
         <p className="text-white mb-4">{description}</p>
@@ -42,22 +42,22 @@ export default function ProjectCard({ project }) {
         {/* Buttons */}
         <div className="flex flex-row mb-4 mt-auto">
           <a href={site} target="blank">
-            <button className="bg-yellow-500 py-1 w-32 font-heading rounded-lg">
+            <button className="bg-primary py-1 w-32 font-heading rounded-lg">
               Live Website
             </button>
           </a>
           <a href={github} target="blank">
-            <button className="bg-yellow-500 py-1 w-32 font-heading ml-2 rounded-lg">
+            <button className="bg-primary py-1 w-32 font-heading ml-2 rounded-lg">
               Github
             </button>
           </a>
         </div>
 
         {/* Icons */}
-        <section className="flex flex-row mb-4">
+        <section className="flex flex-row">
           {skillIcons.map(icon => {
             return (
-              <div className="w-10 h-10 flex justify-center items-center mr-3 bg-gray-800 rounded-full p-2">
+              <div className="w-10 h-10 flex justify-center items-center mr-3 bg-gray-700 rounded-full p-2">
                 {icon.svg}
               </div>
             )

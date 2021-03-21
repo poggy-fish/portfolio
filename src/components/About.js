@@ -10,25 +10,25 @@ export default function About() {
     <section>
       <div className="container full-vh py-4 flex flex-col justify-evenly lg:flex-row-reverse lg:justify-evenly lg:items-center">
         {/* Profile Pic */}
-        <section className="w-5/6 max-w-xs border-2 border-yellow-500 self-center mb-8 lg:mb-0 rounded-lg overflow-visible">
+        <section className="w-5/6 max-w-xs border-2 border-primary self-center mb-8 rounded-lg overflow-visible ">
           <GatsbyImage
             image={pic}
             alt="Me"
             loading="eager"
-            className="transform -translate-x-3 translate-y-3 rounded-lg"
+            className="transform -translate-x-4 translate-y-4 lg:-translate-x-6 lg:translate-y-6 rounded-lg"
           />
         </section>
 
         {/* Text/About section */}
-        <section className="flex flex-col items-center mr-12 lg:items-start">
-          <p className="text-sm text-yellow-500 font-bold mb-2 font-heading ">
+        <section className="flex flex-col items-center lg:mr-12 lg:items-start">
+          <p className="text-sm text-primary font-bold mb-2 tracking-wider ">
             Hey, my name is
           </p>
-          <h2 className="text-4xl lg:text-5xl mb-4 relative">
+          <h2 className="text-4xl lg:text-5xl mb-4 relative text-white">
             Carlos Gauci
-            <div className="absolute w-full border-b-2 border-yellow-500"></div>
+            <div className="absolute w-full border-b-2 border-primary"></div>
           </h2>
-          <p className="text-center lg:text-left lg:max-w-lg">
+          <p className="text-center lg:text-left lg:max-w-lg px-4 lg:px-0 text-white">
             I'm a frontend web developer from Malta. I specialize in building
             fast & responsive websites and apps using modern JavaScript
             frameworks and tools like React and Gatsby.

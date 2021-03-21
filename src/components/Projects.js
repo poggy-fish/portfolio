@@ -11,13 +11,13 @@ export default function Projects() {
     <section>
       <div className="container py-6 flex flex-col items-center">
         {/* Title */}
-        <h2 className="text-3xl inline-block relative mb-6">
+        <h2 className="text-3xl inline-block relative mb-6 text-white">
           Latest Projects
-          <div className="absolute w-full border-b-2 border-yellow-500"></div>
+          <div className="absolute w-full border-b-2 border-primary"></div>
         </h2>
 
         {/* Projects */}
-        <section className="w-full flex flex-row flex-wrap justify-evenly">
+        <section className="w-full flex flex-row flex-wrap justify-center">
           {nodes.map(project => {
             return (
               <ProjectCard key={project.data.order} project={project.data} />
