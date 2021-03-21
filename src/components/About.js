@@ -8,9 +8,9 @@ export default function About() {
 
   return (
     <section>
-      <div className="container full-vh py-4 flex flex-col justify-evenly ">
+      <div className="container full-vh py-4 flex flex-col justify-evenly lg:flex-row-reverse lg:justify-evenly lg:items-center">
         {/* Profile Pic */}
-        <section className="w-5/6 max-w-xs border-2 border-yellow-500 self-center mb-8 rounded-lg overflow-visible">
+        <section className="w-5/6 max-w-xs border-2 border-yellow-500 self-center mb-8 lg:mb-0 rounded-lg overflow-visible">
           <GatsbyImage
             image={pic}
             alt="Me"
@@ -20,15 +20,15 @@ export default function About() {
         </section>
 
         {/* Text/About section */}
-        <section className="flex flex-col items-center">
+        <section className="flex flex-col items-center mr-12 lg:items-start">
           <p className="text-sm text-yellow-500 font-bold mb-2 font-heading ">
             Hey, my name is
           </p>
-          <h2 className="text-4xl mb-4 relative">
+          <h2 className="text-4xl lg:text-5xl mb-4 relative">
             Carlos Gauci
             <div className="absolute w-full border-b-2 border-yellow-500"></div>
           </h2>
-          <p className="text-center">
+          <p className="text-center lg:text-left lg:max-w-lg">
             I'm a frontend web developer from Malta. I specialize in building
             fast & responsive websites and apps using modern JavaScript
             frameworks and tools like React and Gatsby.

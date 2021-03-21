@@ -22,25 +22,25 @@ export default function ProjectCard({ project }) {
   })
 
   return (
-    <article className="w-full max-w-xl bg-black my-6 rounded-lg overflow-hidden">
+    <article className="w-full max-w-sm bg-black my-8 mx-2 rounded-lg overflow-hidden">
       {/* Project image */}
-      <div className=" w-full">
+      <div className="w-full h-2/5">
         <GatsbyImage
           image={siteImage}
           alt={title}
           loading="eager"
-          className="w-full"
+          className="w-full h-full"
         />
       </div>
 
       {/* Text Section */}
-      <section className="p-4">
+      <section className="p-4 flex flex-col h-3/5">
         {/* Title & Desc */}
-        <h3 className="text-white mb-4 text-xl">{title}</h3>
+        <h3 className="text-white mb-2 text-xl">{title}</h3>
         <p className="text-white mb-4">{description}</p>
 
         {/* Buttons */}
-        <div className="flex flex-row mb-4">
+        <div className="flex flex-row mb-4 mt-auto">
           <a href={site} target="blank">
             <button className="bg-yellow-500 py-1 w-32 font-heading rounded-lg">
               Live Website
@@ -54,7 +54,7 @@ export default function ProjectCard({ project }) {
         </div>
 
         {/* Icons */}
-        <section className="flex flex-row mt-4">
+        <section className="flex flex-row mb-4">
           {skillIcons.map(icon => {
             return (
               <div className="w-10 h-10 flex justify-center items-center mr-3 bg-gray-800 rounded-full p-2">
