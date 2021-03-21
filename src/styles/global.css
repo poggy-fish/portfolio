@@ -1,5 +1,5 @@
 @import "@fontsource/montserrat";
-@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/500.css";
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,6 @@
 
 @layer utilities {
   /* 100vh minus header */
-
   .full-vh {
     min-height: calc(100vh - 3.5rem);
   }
@@ -19,9 +18,11 @@
   h3,
   h4 {
     @apply font-heading;
+    @apply text-gray-900;
   }
 
   p {
     @apply font-body;
+    @apply text-gray-700;
   }
 }

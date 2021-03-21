@@ -8,9 +8,9 @@ export default function About() {
 
   return (
     <section>
-      <div className="container full-vh pt-6 flex flex-col justify-evenly ">
+      <div className="container full-vh py-6 flex flex-col justify-evenly ">
         {/* Profile Pic */}
-        <section className="w-52 h-52 border-4 border-yellow-500 self-center mb-10 rounded-lg">
+        <section className="w-5/6 max-w-xs border-4 border-yellow-500 self-center mb-10 rounded-lg">
           <GatsbyImage
             image={pic}
             alt="Me"
@@ -24,7 +24,10 @@ export default function About() {
           <p className="text-sm text-yellow-500 font-bold mb-2 font-heading">
             Hey, my name is
           </p>
-          <h2 className="text-4xl font-bold mb-2">Carlos Gauci</h2>
+          <h2 className="text-4xl mb-4 inline-block relative">
+            Carlos Gauci
+            <div className="absolute w-full border-b-2 border-yellow-500"></div>
+          </h2>
           <p>
             I'm a frontend web developer from Malta. I specialize in building
             fast & responsive websites and apps using modern JavaScript
