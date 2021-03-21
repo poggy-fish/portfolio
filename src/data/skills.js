@@ -18,12 +18,12 @@ import {
 export const skills = [
   {
     id: 1,
-    name: "HTML",
+    name: "HTML5",
     svg: <HTMLIcon />,
   },
   {
     id: 2,
-    name: "CSS",
+    name: "CSS3",
     svg: <CSSIcon />,
   },
   {
