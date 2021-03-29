@@ -18,6 +18,16 @@
   .card-height {
     min-height: 17.2rem;
   }
+
+  /* Disable arrows on number input */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 
 @layer base {
