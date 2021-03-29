@@ -41,12 +41,12 @@ export default function ProjectCard({ project }) {
 
         {/* Buttons */}
         <div className="flex flex-row flex-wrap mb-2 mt-auto">
-          <a href={site} target="blank">
+          <a href={site} target="_blank">
             <button className="bg-primary py-1 w-28 mr-2 my-1 font-heading rounded-lg">
               Website
             </button>
           </a>
-          <a href={github} target="blank">
+          <a href={github} target="_blank">
             <button className="bg-primary py-1 w-28 my-1 font-heading rounded-lg">
               Github
             </button>

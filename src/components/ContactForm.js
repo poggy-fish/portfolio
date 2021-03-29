@@ -44,7 +44,7 @@ export default function ContactForm({ setSent }) {
   }
 
   return (
-    <div className="max-w-xl w-full rounded-lg bg-gray-800 border-2 border-primary my-4 py-8 px-8">
+    <div className="max-w-xl w-full rounded-lg bg-gray-800 border-2 border-primary my-8 p-4 md:p-6">
       <form
         className="flex flex-col"
         name="contact-form"
