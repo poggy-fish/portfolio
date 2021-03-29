@@ -94,7 +94,7 @@ export default function ContactForm({ setSent }) {
         {message && <p className="my-4 text-center">{message}</p>}
         <button
           type="submit"
-          className="bg-primary py-1 w-28 mt-2 md:mt-6 self-center font-heading rounded-lg"
+          className="bg-primary py-1 w-28 mt-2 md:mt-4 self-center font-heading rounded-lg"
         >
           Submit
         </button>
