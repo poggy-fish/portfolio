@@ -1,6 +1,8 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { skills } from "../data/skills"
+import { motion } from "framer-motion"
+import { projectCardVariants } from "../framer/variants"
 
 export default function ProjectCard({ project }) {
   // Destructure project
@@ -22,7 +24,10 @@ export default function ProjectCard({ project }) {
   })
 
   return (
-    <article className="w-full max-w-sm bg-gray-800 my-6 mx-6 rounded-lg overflow-hidden">
+    <motion.article
+      className="w-full max-w-sm bg-gray-800 my-6 rounded-lg overflow-hidden lg:mx-6"
+      variants={projectCardVariants}
+    >
       {/* Project image */}
       <div className="w-full">
         <GatsbyImage
@@ -41,12 +46,12 @@ export default function ProjectCard({ project }) {
 
         {/* Buttons */}
         <div className="flex flex-row flex-wrap mb-2 mt-auto">
-          <a href={site} target="_blank">
+          <a href={site} target="_blank" rel="noreferrer">
             <button className="bg-primary py-1 w-28 mr-2 my-1 font-heading rounded-lg">
               Website
             </button>
           </a>
-          <a href={github} target="_blank">
+          <a href={github} target="_blank" rel="noreferrer">
             <button className="bg-primary py-1 w-28 my-1 font-heading rounded-lg">
               Github
             </button>
@@ -59,7 +64,7 @@ export default function ProjectCard({ project }) {
             return (
               <div
                 key={icon.id}
-                className="w-10 h-10 flex justify-center items-center mr-3 my-1 bg-gray-700 rounded-full p-2"
+                className="w-10 h-10 flex justify-center items-center mr-2 sm:mr-3 my-1 bg-gray-700 rounded-full p-2"
               >
                 {icon.svg}
               </div>
@@ -67,6 +72,6 @@ export default function ProjectCard({ project }) {
           })}
         </section>
       </section>
-    </article>
+    </motion.article>
   )
 }
