@@ -1,26 +1,43 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { motion } from "framer-motion"
+import { aboutVariants } from "../framer/variants"
 
 export default function About() {
   const { image } = useStaticQuery(query)
   const pic = getImage(image)
 
   return (
-    <section>
+    <motion.section
+      variants={aboutVariants}
+      initial="initialSection"
+      animate="animateSection"
+    >
       <div className="container full-vh py-4 flex flex-col justify-evenly md:justify-center lg:flex-row-reverse lg:justify-evenly lg:items-center">
         {/* Profile Pic */}
 
-        <section className="w-5/6 max-w-xs self-center mb-8 rounded-lg overflow-visible relative">
+        <motion.section
+          className="w-5/6 max-w-xs self-center mb-8 rounded-lg overflow-visible relative"
+          variants={aboutVariants}
+          initial="initialPic"
+          animate="animatePic"
+        >
           <GatsbyImage
             image={pic}
             alt="Me"
             loading="eager"
-            className="rounded-lg z-10 transform -translate-x-3 translate-y-3"
+            className="rounded-lg z-10"
+            backgroundColor="#191919"
           />
           {/* Empty div with borders for pic outline */}
-          <div className="absolute bottom-0 left-0 w-full h-full border-2 border-primary rounded-lg z-0 transform translate-x-3 -translate-y-3"></div>
-        </section>
+          <motion.div
+            className="absolute bottom-0 left-0 w-full h-full border-2 border-primary rounded-lg z-0"
+            variants={aboutVariants}
+            initial="initialPicBG"
+            animate="animatePicBG"
+          ></motion.div>
+        </motion.section>
 
         {/* Text/About section */}
         <section className="flex flex-col items-center md:mt-12 lg:mt-0 lg:mr-12 lg:items-start">
@@ -38,7 +55,7 @@ export default function About() {
           </p>
         </section>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
