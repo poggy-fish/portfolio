@@ -8,19 +8,22 @@ export default function About() {
 
   return (
     <section>
-      <div className="container full-vh py-4 flex flex-col justify-evenly lg:flex-row-reverse lg:justify-evenly lg:items-center">
+      <div className="container full-vh py-4 flex flex-col justify-evenly md:justify-center lg:flex-row-reverse lg:justify-evenly lg:items-center">
         {/* Profile Pic */}
-        <section className="w-5/6 max-w-xs border-2 border-primary self-center mb-8 rounded-lg overflow-visible ">
+
+        <section className="w-5/6 max-w-xs self-center mb-8 rounded-lg overflow-visible relative">
           <GatsbyImage
             image={pic}
             alt="Me"
             loading="eager"
-            className="transform -translate-x-4 translate-y-4 lg:-translate-x-6 lg:translate-y-6 rounded-lg"
+            className="rounded-lg z-10 transform -translate-x-3 translate-y-3"
           />
+          {/* Empty div with borders for pic outline */}
+          <div className="absolute bottom-0 left-0 w-full h-full border-2 border-primary rounded-lg z-0 transform translate-x-3 -translate-y-3"></div>
         </section>
 
         {/* Text/About section */}
-        <section className="flex flex-col items-center lg:mr-12 lg:items-start">
+        <section className="flex flex-col items-center md:mt-12 lg:mt-0 lg:mr-12 lg:items-start">
           <p className="text-sm text-primary font-bold mb-2 tracking-wider ">
             Hey, my name is
           </p>
@@ -28,10 +31,10 @@ export default function About() {
             Carlos Gauci
             <div className="absolute w-full border-b-2 border-primary"></div>
           </h2>
-          <p className="text-center lg:text-left lg:max-w-lg px-4 lg:px-0 text-white">
-            I'm a frontend web developer from Malta. I specialize in building
-            fast & responsive websites and apps using modern JavaScript
-            frameworks and tools like React and Gatsby.
+          <p className="text-center lg:text-left md:max-w-md px-4 lg:px-0 text-white">
+            I'm a frontend developer from Malta. I specialize in building fast &
+            responsive websites and apps using JS frameworks and technologies
+            like React and Gatsby.
           </p>
         </section>
       </div>

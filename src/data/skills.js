@@ -13,6 +13,7 @@ import {
   TailwindIcon,
   StripeIcon,
   WordpressIcon,
+  ShopifyIcon,
 } from "../svg/svg"
 
 export const skills = [
@@ -75,5 +76,10 @@ export const skills = [
     id: 12,
     name: "Wordpress",
     svg: <WordpressIcon />,
+  },
+  {
+    id: 13,
+    name: "Shopify",
+    svg: <ShopifyIcon />,
   },
 ]

@@ -34,30 +34,33 @@ export default function ProjectCard({ project }) {
       </div>
 
       {/* Text Section */}
-      <section className="p-4 ">
+      <section className="p-4 flex flex-col card-height">
         {/* Title & Desc */}
         <h3 className="text-white mb-2 text-xl">{title}</h3>
         <p className="text-white mb-4">{description}</p>
 
         {/* Buttons */}
-        <div className="flex flex-row mb-4 mt-auto">
+        <div className="flex flex-row flex-wrap mb-2 mt-auto">
           <a href={site} target="blank">
-            <button className="bg-primary py-1 w-32 font-heading rounded-lg">
-              Live Website
+            <button className="bg-primary py-1 w-28 mr-2 my-1 font-heading rounded-lg">
+              Website
             </button>
           </a>
           <a href={github} target="blank">
-            <button className="bg-primary py-1 w-32 font-heading ml-2 rounded-lg">
+            <button className="bg-primary py-1 w-28 my-1 font-heading rounded-lg">
               Github
             </button>
           </a>
         </div>
 
         {/* Icons */}
-        <section className="flex flex-row">
+        <section className="flex flex-row flex-wrap">
           {skillIcons.map(icon => {
             return (
-              <div className="w-10 h-10 flex justify-center items-center mr-3 bg-gray-700 rounded-full p-2">
+              <div
+                key={icon.id}
+                className="w-10 h-10 flex justify-center items-center mr-3 my-1 bg-gray-700 rounded-full p-2"
+              >
                 {icon.svg}
               </div>
             )

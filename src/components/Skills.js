@@ -3,7 +3,7 @@ import { skills } from "../data/skills"
 
 export default function Skills() {
   return (
-    <section>
+    <section className="lg:mb-10">
       <div className="container py-6 flex flex-col items-center">
         {/* Title */}
         <h2 className="text-3xl relative mb-6 text-white">
