@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { headerVariants, navVariants } from "../framer/variants"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-export default function Header() {
+export default function Header({ navOpen, setNavOpen }) {
   const [selected, setSelected] = useState(1)
   return (
     <header id="top" className="overflow-hidden">
@@ -20,7 +20,8 @@ export default function Header() {
 
         {/* Nav toggle */}
         <motion.div
-          className="w-8 h-8 lg:hidden"
+          onClick={() => setNavOpen(!navOpen)}
+          className="w-8 h-8 md:hidden"
           variants={headerVariants}
           initial="initialNav"
           animate="animateNav"
@@ -30,7 +31,7 @@ export default function Header() {
 
         {/* Desktop nav */}
         <motion.nav
-          className="hidden lg:block"
+          className="hidden md:block"
           variants={headerVariants}
           initial="initialNav"
           animate="animateNav"

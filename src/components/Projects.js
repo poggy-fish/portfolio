@@ -70,7 +70,6 @@ const query = graphql`
                   layout: FULL_WIDTH
                   sizes: "500"
                   formats: [AUTO, WEBP, AVIF]
-                  placeholder: BLURRED
                   quality: 80
                 )
               }

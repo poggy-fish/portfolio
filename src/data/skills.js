@@ -113,7 +113,14 @@ export const skills = [
   {
     id: 15,
     name: "Styled Components",
-    svg: <img src={styledcomponents} alt="Styled Components" />,
+    svg: (
+      <img
+        src={styledcomponents}
+        width="100%"
+        height="100%"
+        alt="Styled Components"
+      />
+    ),
     hidden: true,
     url: "https://styled-components.com/",
   },

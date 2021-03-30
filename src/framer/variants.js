@@ -238,3 +238,77 @@ export const contactVariants = {
     },
   },
 }
+
+// Mobile nav variants
+export const mobileNavVariants = {
+  // Animated borders
+  initial: {
+    width: 0,
+    height: 0,
+  },
+
+  bottomLeft: {
+    height: "100%",
+
+    transition: {
+      duration: 0.15,
+      ease: "linear",
+    },
+  },
+
+  topLeft: {
+    width: "100%",
+
+    transition: {
+      duration: 0.15,
+      delay: 0.25,
+      ease: "linear",
+    },
+  },
+
+  topRight: {
+    height: "100%",
+
+    transition: {
+      duration: 0.15,
+      delay: 0.5,
+      ease: "linear",
+    },
+  },
+
+  bottomRight: {
+    width: "100%",
+
+    transition: {
+      duration: 0.15,
+      delay: 0.75,
+      ease: "linear",
+    },
+  },
+
+  // Nav bg
+  initialBG: {
+    backgroundColor: "rgba(17, 24, 39, 0)",
+  },
+
+  showBG: {
+    backgroundColor: "rgba(17, 24, 39, 1)",
+    transition: {
+      delay: 0.9,
+      duration: 0.25,
+    },
+  },
+
+  // Nav link container
+  initialLinkContainer: {
+    opacity: 0,
+  },
+
+  animateLinkContainer: {
+    opacity: 1,
+    transition: {
+      delay: 1.2,
+      staggerChildren: 0.25,
+    },
+  },
+}
