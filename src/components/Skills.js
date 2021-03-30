@@ -29,24 +29,32 @@ export default function Skills() {
               initial="hidden"
               animate={inView && "show"}
             >
-              {/* Skills list from data/skills.js */}
+              {/* Skill list from data/skills.js */}
               {skills
                 .filter(skill => !skill.hidden)
+                .sort((a, b) => a.id - b.id)
                 .map(skill => {
                   return (
-                    <motion.div
+                    <motion.a
                       key={skill.id}
                       className="flex flex-col items-center my-4 mr-4 lg:mr-0 lg:mx-8 w-14"
+                      href={skill.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       variants={skillIconVariants}
+                      whileHover={{ y: -4, scale: 1.1 }}
                     >
                       {/* SVG icon */}
-                      <div className="w-14 h-14 flex items-center justify-center p-2 rounded-full bg-gray-800">
+                      <motion.div
+                        className="w-14 h-14 flex items-center justify-center p-2 rounded-full bg-gray-800"
+                        whileHover={{ backgroundColor: "rgba(64, 76, 94)" }}
+                      >
                         {skill.svg}
-                      </div>
+                      </motion.div>
 
                       {/* Name */}
                       <p className="mt-2 text-xs  text-white">{skill.name}</p>
-                    </motion.div>
+                    </motion.a>
                   )
                 })}
             </motion.section>

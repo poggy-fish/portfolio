@@ -3,6 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { skills } from "../data/skills"
 import { motion } from "framer-motion"
 import { projectCardVariants } from "../framer/variants"
+import ReactTooltip from "react-tooltip"
 
 export default function ProjectCard({ project }) {
   // Destructure project
@@ -46,12 +47,12 @@ export default function ProjectCard({ project }) {
 
         {/* Buttons */}
         <div className="flex flex-row flex-wrap mb-2 mt-auto">
-          <a href={site} target="_blank" rel="noreferrer">
+          <a href={site} target="_blank" rel="noopener noreferrer">
             <button className="bg-primary py-1 w-28 mr-2 my-1 font-heading rounded-lg">
               Website
             </button>
           </a>
-          <a href={github} target="_blank" rel="noreferrer">
+          <a href={github} target="_blank" rel="noopener noreferrer">
             <button className="bg-primary py-1 w-28 my-1 font-heading rounded-lg">
               Github
             </button>
@@ -62,12 +63,30 @@ export default function ProjectCard({ project }) {
         <section className="flex flex-row flex-wrap">
           {skillIcons.map(icon => {
             return (
-              <div
+              <a
                 key={icon.id}
-                className="w-10 h-10 flex justify-center items-center mr-2 sm:mr-3 my-1 bg-gray-700 rounded-full p-2"
+                href={icon.url}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                {icon.svg}
-              </div>
+                <motion.div
+                  className="w-10 h-10 flex justify-center items-center mr-2 sm:mr-3 my-1 bg-gray-700 rounded-full p-2 cursor-pointer duration-100"
+                  data-tip={icon.name}
+                  variants={projectCardVariants}
+                  initial="initial"
+                  whileHover="hover"
+                >
+                  {icon.svg}
+                </motion.div>
+                <ReactTooltip
+                  place="bottom"
+                  type="dark"
+                  effect="solid"
+                  offset={{ bottom: -5 }}
+                  className="react-tooltip"
+                  backgroundColor="#111"
+                />
+              </a>
             )
           })}
         </section>

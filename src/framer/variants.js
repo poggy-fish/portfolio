@@ -151,4 +151,14 @@ export const projectCardVariants = {
     opacity: 1,
     transition: { ease: "linear", duration: 0.3 },
   },
+
+  // Skill icons on project cards
+  initial: {
+    scale: 1,
+    backgroundColor: "rgb(55, 65, 81)",
+  },
+  hover: {
+    scale: 1.15,
+    backgroundColor: "rgb(64, 76, 94)",
+  },
 }

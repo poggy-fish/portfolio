@@ -15,8 +15,14 @@
     min-height: calc(100vh - 3.5rem);
   }
 
+  /* Project card min height */
   .card-height {
     min-height: 17.2rem;
+  }
+
+  /* React tooltip */
+  .react-tooltip {
+    padding: 0.25rem 0.5rem !important;
   }
 
   /* Disable arrows on number input */

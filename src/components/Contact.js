@@ -25,7 +25,7 @@ export default function Contact() {
         <a
           href="https://github.com/carlosgauci"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <div className="w-14 h-14 mx-3 flex items-center justify-center p-2 rounded-full bg-gray-800">
             <GithubIcon />
