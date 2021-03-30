@@ -1,12 +1,17 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { motion } from "framer-motion"
-import { aboutVariants } from "../framer/variants"
+import { motion, useViewportScroll, useTransform } from "framer-motion"
+import { aboutVariants, arrowVariants } from "../framer/variants"
 
 export default function About() {
+  // Get profile pic
   const { image } = useStaticQuery(query)
   const pic = getImage(image)
+
+  // Framer motion - hide scroll down arrow on scroll
+  const { scrollY } = useViewportScroll()
+  const arrowDisplay = useTransform(scrollY, [0, 20], ["1", "0"])
 
   return (
     <motion.section
@@ -15,7 +20,7 @@ export default function About() {
       animate="animateSection"
       id="about"
     >
-      <div className="container full-vh py-4 flex flex-col justify-evenly md:justify-center lg:flex-row-reverse lg:justify-evenly lg:items-center">
+      <div className="container full-vh py-4 flex flex-col justify-evenly md:justify-center lg:flex-row-reverse lg:justify-evenly lg:items-center relative">
         {/* Profile Pic */}
 
         <motion.section
@@ -55,6 +60,24 @@ export default function About() {
             like React and Gatsby.
           </p>
         </section>
+        {/* Scroll down arrow */}
+        <motion.div
+          className="hidden md:flex absolute bottom-0 left-2/4 w-12 h-12 mb-2 transform -translate-x-1/2 flex-col justify-center items-center"
+          style={{
+            opacity: arrowDisplay,
+          }}
+          variants={arrowVariants}
+          initial="containerInitial"
+          animate="containerAnimate"
+        >
+          <motion.span
+            className="w-2 h-2 border-r border-b border-primary transform rotate-45"
+            variants={arrowVariants}
+            initial="initial"
+            animate="animate"
+          ></motion.span>
+          <span className="w-4 h-4 border-r-2 border-b-2 border-primary transform rotate-45"></span>
+        </motion.div>
       </div>
     </motion.section>
   )

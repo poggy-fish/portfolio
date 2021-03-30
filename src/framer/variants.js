@@ -90,6 +90,34 @@ export const aboutVariants = {
   },
 }
 
+// About section scroll arrow
+export const arrowVariants = {
+  containerInitial: {
+    opacity: 0,
+  },
+
+  containerAnimate: {
+    opacity: 1,
+    transition: {
+      delay: 3,
+      duration: 0.2,
+    },
+  },
+
+  initial: {
+    opacity: 1,
+    y: 5,
+    rotate: 45,
+  },
+
+  animate: {
+    opacity: 0,
+    y: -10,
+
+    transition: { repeat: Infinity, duration: 1.5 },
+  },
+}
+
 // Skills section
 export const skillsVariants = {
   // Skill icons container
@@ -99,7 +127,7 @@ export const skillsVariants = {
 
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.05 },
+    transition: { staggerChildren: 0.05, delay: 0.15 },
   },
 
   // Title
@@ -111,7 +139,7 @@ export const skillsVariants = {
   animateTitle: {
     y: 0,
     opacity: 1,
-    transition: { ease: "linear", duration: 0.25 },
+    transition: { ease: "linear", duration: 0.25, delay: 0.15 },
   },
 }
 
@@ -139,7 +167,7 @@ export const projectVariants = {
 
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.25 },
+    transition: { staggerChildren: 0.25, delay: 0.15 },
   },
 
   // Title
@@ -151,7 +179,7 @@ export const projectVariants = {
   animateTitle: {
     y: 0,
     opacity: 1,
-    transition: { ease: "linear", duration: 0.15 },
+    transition: { ease: "linear", duration: 0.25, delay: 0.15 },
   },
 }
 
@@ -192,6 +220,7 @@ export const contactVariants = {
 
     transition: {
       duration: 0.5,
+      delay: 0.15,
     },
   },
 
@@ -205,6 +234,7 @@ export const contactVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
+      delay: 0.15,
     },
   },
 }
