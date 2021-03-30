@@ -1,7 +1,6 @@
 import React from "react"
 import { skills } from "../data/skills"
 import { motion } from "framer-motion"
-import { skillIconVariants } from "../framer/variants"
 
 export default function Footer() {
   // Get skills for powered by section

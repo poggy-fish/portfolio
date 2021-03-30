@@ -68,6 +68,7 @@ export default function ProjectCard({ project }) {
                 href={icon.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={icon.name}
               >
                 <motion.div
                   className="w-10 h-10 flex justify-center items-center mr-2 sm:mr-3 my-1 bg-gray-700 rounded-full p-2 cursor-pointer duration-100"

@@ -6,7 +6,8 @@ module.exports = {
   siteMetadata: {
     title: `Carlos Gauci`,
     description: `A frontend developer from Malta. I specialize in building fast & responsive websites and apps using JS frameworks and technologies like React and Gatsby.`,
-    author: `@gatsbyjs`,
+    url: `https://carlosgauci.com`,
+    image: `img.jpg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
