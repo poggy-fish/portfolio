@@ -22,6 +22,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        duration: 1000,
+      },
+    },
+    {
       resolve: `gatsby-source-airtable`,
       options: {
         apiKey: process.env.GATSBY_AIRTABLE_API,

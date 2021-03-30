@@ -1,11 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 import { NavIcon } from "../svg/svg"
 import { motion } from "framer-motion"
-import { headerVariants } from "../framer/variants"
+import { headerVariants, navVariants } from "../framer/variants"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 export default function Header() {
+  const [selected, setSelected] = useState(1)
   return (
-    <header className="overflow-hidden">
+    <header id="top" className="overflow-hidden">
       <div className="container h-14 flex justify-between items-center">
         <motion.h1
           className="text-3xl text-white"
@@ -34,9 +36,58 @@ export default function Header() {
           animate="animateNav"
         >
           <ul className="flex flex-row font-heading text-white">
-            <li className="mr-4">About</li>
-            <li className="mr-4">Projects</li>
-            <li>Contact</li>
+            {/* About link */}
+            <li className="mr-4 relative">
+              <AnchorLink to="/#top">About</AnchorLink>
+              {selected === 1 && (
+                <motion.div
+                  className="absolute w-full border-b-2 border-primary"
+                  variants={navVariants}
+                  initial="underlineInitial"
+                  animate="underlineAnimate"
+                ></motion.div>
+              )}
+            </li>
+
+            {/* Projects link */}
+            <li className="mr-4 relative">
+              <AnchorLink to="/#projects">
+                <button
+                  onMouseEnter={() => setSelected(2)}
+                  onMouseLeave={() => setSelected(1)}
+                >
+                  Projects
+                </button>
+              </AnchorLink>
+              {selected === 2 && (
+                <motion.div
+                  className="absolute w-full border-b-2 border-primary"
+                  variants={navVariants}
+                  initial="underlineInitial"
+                  animate="underlineAnimate"
+                ></motion.div>
+              )}
+            </li>
+
+            {/* Contact Link */}
+            <li className="relative">
+              <AnchorLink to="/#contact">
+                <button
+                  onMouseEnter={() => setSelected(3)}
+                  onMouseLeave={() => setSelected(1)}
+                >
+                  Contact
+                </button>
+              </AnchorLink>
+              {selected === 3 && (
+                <motion.div
+                  className="absolute w-full border-b-2 border-primary"
+                  variants={navVariants}
+                  initial="underlineInitial"
+                  animate="underlineAnimate"
+                ></motion.div>
+              )}
+            </li>
           </ul>
         </motion.nav>
       </div>

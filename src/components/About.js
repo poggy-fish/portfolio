@@ -13,6 +13,7 @@ export default function About() {
       variants={aboutVariants}
       initial="initialSection"
       animate="animateSection"
+      id="about"
     >
       <div className="container full-vh py-4 flex flex-col justify-evenly md:justify-center lg:flex-row-reverse lg:justify-evenly lg:items-center">
         {/* Profile Pic */}

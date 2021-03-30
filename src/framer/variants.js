@@ -25,6 +25,21 @@ export const headerVariants = {
   },
 }
 
+// Nav
+export const navVariants = {
+  underlineInitial: {
+    width: "0%",
+  },
+
+  underlineAnimate: {
+    width: "100%",
+    transition: {
+      duration: 0.5,
+      delay: 0.25,
+    },
+  },
+}
+
 // About section
 export const aboutVariants = {
   // Whole section
