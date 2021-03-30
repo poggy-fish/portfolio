@@ -177,3 +177,34 @@ export const projectCardVariants = {
     backgroundColor: "rgb(64, 76, 94)",
   },
 }
+
+// Contact section
+
+export const contactVariants = {
+  initialRight: {
+    x: -50,
+    opacity: 0,
+  },
+
+  animateRight: {
+    x: 0,
+    opacity: 1,
+
+    transition: {
+      duration: 0.5,
+    },
+  },
+
+  initialLeft: {
+    x: 50,
+    opacity: 0,
+  },
+
+  animateLeft: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+}

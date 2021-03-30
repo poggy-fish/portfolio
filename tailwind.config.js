@@ -24,7 +24,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#FF9C44",
+        primary: "rgb(255, 156, 68)",
         primarybg: "rgba(255, 156, 68, 0.92)",
         black: "#191919",
         textwhite: "rgba(255,255,255,0.9)",

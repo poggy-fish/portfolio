@@ -53,7 +53,7 @@ export default function ProjectCard({ project }) {
             </button>
           </a>
           <a href={github} target="_blank" rel="noopener noreferrer">
-            <button className="bg-primary py-1 w-28 my-1 font-heading rounded-lg">
+            <button className="bg-white py-1 w-28 my-1 font-heading rounded-lg">
               Github
             </button>
           </a>
