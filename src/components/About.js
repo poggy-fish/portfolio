@@ -91,7 +91,6 @@ const query = graphql`
         gatsbyImageData(
           formats: [AUTO, WEBP, AVIF]
           layout: FULL_WIDTH
-          placeholder: BLURRED
           quality: 85
           sizes: "400"
         )
