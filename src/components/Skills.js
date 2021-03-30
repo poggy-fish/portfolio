@@ -30,23 +30,25 @@ export default function Skills() {
               animate={inView && "show"}
             >
               {/* Skills list from data/skills.js */}
-              {skills.map(skill => {
-                return (
-                  <motion.div
-                    key={skill.id}
-                    className="flex flex-col items-center my-4 mr-4 lg:mr-0 lg:mx-8 w-14"
-                    variants={skillIconVariants}
-                  >
-                    {/* SVG icon */}
-                    <div className="w-14 h-14 flex items-center justify-center p-2 rounded-full bg-gray-800">
-                      {skill.svg}
-                    </div>
+              {skills
+                .filter(skill => !skill.hidden)
+                .map(skill => {
+                  return (
+                    <motion.div
+                      key={skill.id}
+                      className="flex flex-col items-center my-4 mr-4 lg:mr-0 lg:mx-8 w-14"
+                      variants={skillIconVariants}
+                    >
+                      {/* SVG icon */}
+                      <div className="w-14 h-14 flex items-center justify-center p-2 rounded-full bg-gray-800">
+                        {skill.svg}
+                      </div>
 
-                    {/* Name */}
-                    <p className="mt-2 text-xs  text-white">{skill.name}</p>
-                  </motion.div>
-                )
-              })}
+                      {/* Name */}
+                      <p className="mt-2 text-xs  text-white">{skill.name}</p>
+                    </motion.div>
+                  )
+                })}
             </motion.section>
           </div>
         </section>

@@ -1,5 +1,6 @@
 import React from "react"
 
+// SVGs
 import {
   HTMLIcon,
   CSSIcon,
@@ -13,8 +14,12 @@ import {
   TailwindIcon,
   StripeIcon,
   WordpressIcon,
-  ShopifyIcon,
+  ContentfulIcon,
+  AirtableIcon,
 } from "../svg/svg"
+
+// Styled components image
+import styledcomponents from "../images/styled.png"
 
 export const skills = [
   {
@@ -44,28 +49,30 @@ export const skills = [
   },
   {
     id: 6,
-    name: "Firebase",
-    svg: <FirebaseIcon />,
-  },
-  {
-    id: 7,
-    name: "Netlify",
-    svg: <NetlifyIcon />,
-  },
-  {
-    id: 8,
     name: "GraphQL",
     svg: <GraphQLIcon />,
   },
   {
-    id: 9,
+    id: 7,
+    name: "Firebase",
+    svg: <FirebaseIcon />,
+  },
+
+  {
+    id: 8,
     name: "Sass",
     svg: <SassIcon />,
   },
   {
-    id: 10,
+    id: 9,
     name: "Tailwind",
     svg: <TailwindIcon />,
+  },
+
+  {
+    id: 10,
+    name: "Netlify",
+    svg: <NetlifyIcon />,
   },
   {
     id: 11,
@@ -79,7 +86,18 @@ export const skills = [
   },
   {
     id: 13,
-    name: "Shopify",
-    svg: <ShopifyIcon />,
+    name: "Contentful",
+    svg: <ContentfulIcon />,
+  },
+  {
+    id: 14,
+    name: "Airtable",
+    svg: <AirtableIcon />,
+  },
+  {
+    id: 15,
+    name: "Styled Components",
+    svg: <img src={styledcomponents} alt="Styled Components" />,
+    hidden: true,
   },
 ]
