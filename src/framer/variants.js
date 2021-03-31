@@ -299,6 +299,13 @@ export const mobileNavVariants = {
     },
   },
 
+  exit: {
+    x: "100%",
+    transition: {
+      duration: 0.25,
+    },
+  },
+
   // Nav link container
   initialLinkContainer: {
     opacity: 0,
@@ -309,6 +316,17 @@ export const mobileNavVariants = {
     transition: {
       delay: 1.2,
       staggerChildren: 0.25,
+    },
+  },
+
+  // Close button
+  initialBtn: {
+    opacity: 0,
+  },
+  animateBtn: {
+    opacity: 1,
+    transition: {
+      delay: 0.9,
     },
   },
 }
