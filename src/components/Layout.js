@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header navOpen={navOpen} setNavOpen={setNavOpen} />
-      <div className="flex flex-col h-full overflow-hidden">
+      <div className="flex flex-col min-h-full overflow-hidden">
         <AnimatePresence>
           {navOpen && <Navigation setNavOpen={setNavOpen} />}
         </AnimatePresence>
