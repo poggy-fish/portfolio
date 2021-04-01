@@ -4,7 +4,7 @@ import { NavIcon } from "../svg/svg"
 import { motion, useViewportScroll, useTransform } from "framer-motion"
 import { headerVariants } from "../framer/variants"
 
-export default function Header({ navOpen, setNavOpen, selected, setSelected }) {
+export default function Header({ setNavOpen, selected, setSelected }) {
   // Change header on scroll
   const { scrollY } = useViewportScroll()
   const headerShadow = useTransform(
@@ -30,7 +30,7 @@ export default function Header({ navOpen, setNavOpen, selected, setSelected }) {
 
         {/* Nav toggle */}
         <motion.div
-          onClick={() => setNavOpen(!navOpen)}
+          onClick={() => setNavOpen(true)}
           className="w-8 h-8 md:hidden"
           variants={headerVariants}
           initial="initialNav"

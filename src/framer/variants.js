@@ -105,7 +105,7 @@ export const arrowVariants = {
   containerAnimate: {
     opacity: 1,
     transition: {
-      delay: 3,
+      delay: 1.5,
       duration: 0.2,
     },
   },
@@ -154,7 +154,7 @@ export const skillIconVariants = {
   hidden: {
     x: -10,
     opacity: 0,
-    scale: 0.3,
+    scale: 0.2,
   },
   show: {
     x: 0,

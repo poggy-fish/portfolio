@@ -21,20 +21,24 @@ export default function Contact() {
           </h2>
           <section className="flex my-4" ref={ref}>
             {/* Mail icon / link */}
-            <a href="mailto:carlosgauci@gmail.com">
+            <a href="mailto:carlosgauci@gmail.com" tabIndex={-1}>
               <motion.button
-                className="w-14 h-14 mx-3 flex items-center justify-center p-3 rounded-full bg-gray-800"
+                className="w-14 h-14 mx-3 flex items-center justify-center p-3 rounded-full bg-gray-800 border-2 border-transparent focus:outline-none focus:border-primary"
                 variants={contactVariants}
                 initial="initialLeft"
                 animate={inView && "animateLeft"}
+                aria-label="email"
               >
                 <MailIcon />
               </motion.button>
             </a>
 
             {/* Phone icon / link */}
-            <a href="tel:+35679007289">
-              <button className="w-14 h-14 mx-3 flex items-center justify-center p-3 rounded-full bg-gray-800">
+            <a href="tel:+35679007289" tabIndex={-1}>
+              <button
+                aria-label="phone"
+                className="w-14 h-14 mx-3 flex items-center justify-center p-3 rounded-full bg-gray-800 border-2 border-transparent focus:outline-none focus:border-primary"
+              >
                 <PhoneIcon />
               </button>
             </a>
@@ -44,12 +48,14 @@ export default function Contact() {
               href="https://github.com/carlosgauci"
               target="_blank"
               rel="noopener noreferrer"
+              tabIndex={-1}
             >
               <motion.button
-                className="w-14 h-14 mx-3 flex items-center justify-center p-2 rounded-full bg-gray-800"
+                className="w-14 h-14 mx-3 flex items-center justify-center p-2 rounded-full bg-gray-800 border-2 border-transparent focus:outline-none focus:border-primary"
                 variants={contactVariants}
                 initial="initialRight"
                 animate={inView && "animateRight"}
+                aria-label="github"
               >
                 <GithubIcon />
               </motion.button>

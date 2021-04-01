@@ -45,17 +45,23 @@ export default function ProjectCard({ project }) {
         <h3 className="text-white mb-2 text-xl">{title}</h3>
         <p className="text-white mb-4">{description}</p>
 
-        {/* Buttons */}
+        {/* Links/Buttons */}
         <div className="flex flex-row flex-wrap mb-2 mt-auto">
-          <a href={site} target="_blank" rel="noopener noreferrer">
-            <button className="bg-primary py-1 w-28 mr-2 my-1 font-heading rounded-lg">
-              Website
-            </button>
+          <a
+            href={site}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary py-1 w-28 font-heading rounded-lg mr-2 my-1 text-center"
+          >
+            Website
           </a>
-          <a href={github} target="_blank" rel="noopener noreferrer">
-            <button className="bg-white py-1 w-28 my-1 font-heading rounded-lg">
-              Github
-            </button>
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white py-1 w-28 font-heading my-1 rounded-lg text-center"
+          >
+            Github
           </a>
         </div>
 
@@ -69,13 +75,16 @@ export default function ProjectCard({ project }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={icon.name}
+                tabIndex={-1}
               >
                 <motion.div
-                  className="w-10 h-10 flex justify-center items-center mr-2 sm:mr-3 my-1 bg-gray-700 rounded-full p-2 cursor-pointer duration-100"
+                  className="w-10 h-10 flex justify-center items-center mr-2 sm:mr-3 my-1 bg-gray-700 rounded-full p-2 cursor-pointer duration-100 focus:outline-none"
                   data-tip={icon.name}
                   variants={projectCardVariants}
                   initial="initial"
                   whileHover="hover"
+                  whileFocus="hover"
+                  tabIndex={0}
                 >
                   {icon.svg}
                 </motion.div>

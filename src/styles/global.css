@@ -37,6 +37,11 @@
     top: 12.5%;
   }
 
+  /* Inherit color */
+  .inherit {
+    color: inherit;
+  }
+
   /* Disable arrows on number input */
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {

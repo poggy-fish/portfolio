@@ -19,11 +19,12 @@ export default function Footer() {
             return (
               <motion.a
                 key={skill.id}
-                className="flex flex-col items-center my-4 mr-4 lg:mr-0 lg:mx-4 w-14"
+                className="flex flex-col items-center my-4 mr-4 lg:mr-0 lg:mx-4 w-14 focus:outline-none"
                 href={skill.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ y: -2, scale: 1.05 }}
+                whileFocus={{ y: -2, scale: 1.05 }}
               >
                 {/* SVG icon */}
                 <motion.div

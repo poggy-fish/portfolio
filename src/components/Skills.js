@@ -37,23 +37,35 @@ export default function Skills() {
                   return (
                     <motion.a
                       key={skill.id}
-                      className="flex flex-col items-center my-4 mr-4 lg:mr-0 lg:mx-8 w-14"
+                      className="my-4 mx-2 lg:mr-0 lg:mx-8 w-14 block text-xs text-white focus:outline-none focus:text-primary"
                       href={skill.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       variants={skillIconVariants}
-                      whileHover={{ y: -4, scale: 1.1 }}
                     >
-                      {/* SVG icon */}
                       <motion.div
-                        className="w-14 h-14 flex items-center justify-center p-2 rounded-full bg-gray-800"
-                        whileHover={{ backgroundColor: "rgba(64, 76, 94)" }}
+                        className="w-full flex flex-col items-center"
+                        whileHover={{
+                          y: -5,
+                          scale: 1.05,
+                        }}
                       >
-                        {skill.svg}
-                      </motion.div>
+                        {/* SVG icon */}
+                        <motion.div
+                          className="w-14 h-14 flex items-center justify-center p-2 rounded-full bg-gray-800"
+                          whileHover={{ backgroundColor: "rgba(64, 76, 94)" }}
+                        >
+                          {skill.svg}
+                        </motion.div>
 
-                      {/* Name */}
-                      <p className="mt-2 text-xs  text-white">{skill.name}</p>
+                        {/* Name */}
+                        <button
+                          className="mt-2 font-body inherit focus:outline-none"
+                          tabIndex={-1}
+                        >
+                          {skill.name}
+                        </button>
+                      </motion.div>
                     </motion.a>
                   )
                 })}

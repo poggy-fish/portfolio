@@ -46,7 +46,7 @@ const IndexPage = ({ setSelected }) => {
 
       {/* Contact */}
       <InView
-        threshold={0.5}
+        threshold={0.8}
         as="section"
         onChange={inView => selectNavItem(3, inView)}
       >

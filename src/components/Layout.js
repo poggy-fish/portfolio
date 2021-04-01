@@ -30,7 +30,6 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header
-        navOpen={navOpen}
         setNavOpen={setNavOpen}
         selected={selected}
         setSelected={setSelected}
