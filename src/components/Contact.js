@@ -23,11 +23,12 @@ export default function Contact() {
             {/* Mail icon / link */}
             <a href="mailto:carlosgauci@gmail.com" tabIndex={-1}>
               <motion.button
-                className="w-14 h-14 mx-3 flex items-center justify-center p-3 rounded-full bg-gray-800 border-2 border-transparent focus:outline-none focus:border-primary"
+                className="w-14 h-14 mx-3 flex items-center justify-center p-3 rounded-full bg-gray-800 border-2 focus:outline-none"
+                aria-label="email"
                 variants={contactVariants}
                 initial="initialLeft"
                 animate={inView && "animateLeft"}
-                aria-label="email"
+                whileFocus={{ border: "2px solid rgba(255,255,255,1)" }}
               >
                 <MailIcon />
               </motion.button>
@@ -35,12 +36,16 @@ export default function Contact() {
 
             {/* Phone icon / link */}
             <a href="tel:+35679007289" tabIndex={-1}>
-              <button
+              <motion.button
                 aria-label="phone"
-                className="w-14 h-14 mx-3 flex items-center justify-center p-3 rounded-full bg-gray-800 border-2 border-transparent focus:outline-none focus:border-primary"
+                className="w-14 h-14 mx-3 flex items-center justify-center p-3 rounded-full bg-gray-800 focus:outline-none"
+                variants={contactVariants}
+                initial="initialCenter"
+                animate={inView && "animateCenter"}
+                whileFocus={{ border: "2px solid rgba(255,255,255,1)" }}
               >
                 <PhoneIcon />
-              </button>
+              </motion.button>
             </a>
 
             {/* Github icon / link */}
@@ -51,11 +56,12 @@ export default function Contact() {
               tabIndex={-1}
             >
               <motion.button
-                className="w-14 h-14 mx-3 flex items-center justify-center p-2 rounded-full bg-gray-800 border-2 border-transparent focus:outline-none focus:border-primary"
+                className="w-14 h-14 mx-3 flex items-center justify-center p-2 rounded-full bg-gray-800 focus:outline-none"
+                aria-label="github"
                 variants={contactVariants}
                 initial="initialRight"
                 animate={inView && "animateRight"}
-                aria-label="github"
+                whileFocus={{ border: "2px solid rgba(255,255,255,1)" }}
               >
                 <GithubIcon />
               </motion.button>

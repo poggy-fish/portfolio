@@ -22,6 +22,7 @@ const Layout = ({ children }) => {
   // Nav item selected
   const [selected, setSelected] = useState(0)
 
+  // Add props to children
   const childrenWithProps = React.Children.map(children, child =>
     React.cloneElement(child, {
       setSelected,

@@ -214,32 +214,67 @@ export const projectCardVariants = {
 
 // Contact section
 export const contactVariants = {
+  // Icons
+
+  // Left icon
+  initialLeft: {
+    x: 50,
+    opacity: 0,
+    border: "2px solid rgba(255, 156, 68, 0)",
+  },
+
+  animateLeft: {
+    border: "2px solid rgba(255, 156, 68, 1)",
+
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: 0.15,
+
+      border: {
+        delay: 0.5,
+        duration: 0.5,
+      },
+    },
+  },
+
+  // Center icon
+  initialCenter: {
+    border: "2px solid rgba(255, 156, 68, 0)",
+  },
+
+  animateCenter: {
+    border: "2px solid rgba(255, 156, 68, 1)",
+
+    transition: {
+      border: {
+        delay: 0.65,
+        duration: 0.5,
+      },
+    },
+  },
+
+  // Right icon
   initialRight: {
     x: -50,
     opacity: 0,
+    border: "2px solid rgba(255, 156, 68, 0)",
   },
 
   animateRight: {
     x: 0,
     opacity: 1,
+    border: "2px solid rgba(255, 156, 68, 1)",
 
     transition: {
       duration: 0.5,
       delay: 0.15,
-    },
-  },
 
-  initialLeft: {
-    x: 50,
-    opacity: 0,
-  },
-
-  animateLeft: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      delay: 0.15,
+      border: {
+        delay: 0.75,
+        duration: 0.5,
+      },
     },
   },
 }
