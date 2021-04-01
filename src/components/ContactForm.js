@@ -1,6 +1,8 @@
 import React, { useState } from "react"
+import { motion } from "framer-motion"
+import { contactFormVariants } from "../framer/variants"
 
-export default function ContactForm({ setSent }) {
+export default function ContactForm({ setSent, inView }) {
   // Error message
   const [message, setMessage] = useState("")
 
@@ -44,7 +46,12 @@ export default function ContactForm({ setSent }) {
   }
 
   return (
-    <div className="max-w-xl w-full rounded-lg bg-gray-800 border-2 border-primary my-8 p-4 md:p-6">
+    <motion.div
+      className="relative overflow-hidden box-border max-w-xl w-full rounded-lg bg-gray-800 border-2 border-primary mt-8 mb-4 p-4 md:p-6"
+      variants={contactFormVariants}
+      initial="initial"
+      animate={inView && "animate"}
+    >
       <form
         className="flex flex-col"
         name="contact-form"
@@ -99,6 +106,6 @@ export default function ContactForm({ setSent }) {
           Submit
         </button>
       </form>
-    </div>
+    </motion.div>
   )
 }

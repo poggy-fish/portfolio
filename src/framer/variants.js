@@ -279,6 +279,23 @@ export const contactVariants = {
   },
 }
 
+// Contact Form
+export const contactFormVariants = {
+  initial: {
+    opacity: 0,
+    y: 25,
+  },
+
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.5,
+      duration: 0.5,
+    },
+  },
+}
+
 // Mobile nav variants
 export const mobileNavVariants = {
   // Animated borders

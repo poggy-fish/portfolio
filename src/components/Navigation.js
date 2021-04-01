@@ -30,25 +30,25 @@ export default function Navigation({ setNavOpen, selected, setSelected }) {
 
       {/* Animated sides */}
       <motion.span
-        className="absolute bottom-0 left-0 border-r-2 border-primary w-0 h-0"
+        className="absolute bottom-0 left-0 border-r-4 border-primary w-0 h-0"
         variants={mobileNavVariants}
         initial="initial"
         animate="bottomLeft"
       ></motion.span>
       <motion.span
-        className="absolute top-0 left-0 border-b-2 border-primary w-0 h-0"
+        className="absolute top-0 left-0 border-b-4 border-primary w-0 h-0"
         variants={mobileNavVariants}
         initial="initial"
         animate="topLeft"
       ></motion.span>
       <motion.span
-        className="absolute top-0 right-0 border-l-2 border-primary"
+        className="absolute top-0 right-0 border-l-4 border-primary"
         variants={mobileNavVariants}
         initial="initial"
         animate="topRight"
       ></motion.span>
       <motion.span
-        className="absolute bottom-0 right-0 border-t-2 border-primary w-0 h-0"
+        className="absolute bottom-0 right-0 border-t-4 border-primary w-0 h-0"
         variants={mobileNavVariants}
         initial="initial"
         animate="bottomRight"

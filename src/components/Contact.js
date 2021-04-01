@@ -21,9 +21,13 @@ export default function Contact() {
           </h2>
           <section className="flex my-4" ref={ref}>
             {/* Mail icon / link */}
-            <a href="mailto:carlosgauci@gmail.com" tabIndex={-1}>
+            <a
+              href="mailto:carlosgauci@gmail.com"
+              tabIndex={-1}
+              className="focus:outline-none"
+            >
               <motion.button
-                className="w-14 h-14 mx-3 flex items-center justify-center p-3 rounded-full bg-gray-800 border-2 focus:outline-none"
+                className="w-16 h-16 mx-3 flex items-center justify-center p-3 rounded-full bg-gray-800 border-2 focus:outline-none"
                 aria-label="email"
                 variants={contactVariants}
                 initial="initialLeft"
@@ -35,10 +39,14 @@ export default function Contact() {
             </a>
 
             {/* Phone icon / link */}
-            <a href="tel:+35679007289" tabIndex={-1}>
+            <a
+              href="tel:+35679007289"
+              tabIndex={-1}
+              className="focus:outline-none"
+            >
               <motion.button
                 aria-label="phone"
-                className="w-14 h-14 mx-3 flex items-center justify-center p-3 rounded-full bg-gray-800 focus:outline-none"
+                className="w-16 h-16  mx-3 flex items-center justify-center p-3 rounded-full bg-gray-800 focus:outline-none"
                 variants={contactVariants}
                 initial="initialCenter"
                 animate={inView && "animateCenter"}
@@ -54,9 +62,10 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               tabIndex={-1}
+              className="focus:outline-none"
             >
               <motion.button
-                className="w-14 h-14 mx-3 flex items-center justify-center p-2 rounded-full bg-gray-800 focus:outline-none"
+                className="w-16 h-16 mx-3 flex items-center justify-center p-2 rounded-full bg-gray-800 focus:outline-none"
                 aria-label="github"
                 variants={contactVariants}
                 initial="initialRight"
@@ -68,7 +77,7 @@ export default function Contact() {
             </a>
           </section>
           {!sent ? (
-            <ContactForm setSent={setSent} />
+            <ContactForm setSent={setSent} inView={inView} />
           ) : (
             <p className="text-white mt-4 mb-40">
               Your message was sent successfully!

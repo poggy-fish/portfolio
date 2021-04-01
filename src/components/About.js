@@ -39,7 +39,7 @@ export default function About() {
           />
           {/* Empty div with borders for pic outline */}
           <motion.div
-            className="absolute bottom-0 left-0 w-full h-full border-2 border-primary rounded-lg z-0"
+            className="absolute bottom-0 left-0 w-full h-full border-4 border-primary rounded-lg z-0"
             variants={aboutVariants}
             initial="initialPicBG"
             animate="animatePicBG"
