@@ -1,8 +1,10 @@
 import React from "react"
+import NavLinks from "./NavLinks"
+import { BackIcon } from "../svg/svg"
 import { motion } from "framer-motion"
 import { mobileNavVariants } from "../framer/variants"
 
-export default function Navigation({ setNavOpen }) {
+export default function Navigation({ setNavOpen, selected, setSelected }) {
   return (
     <motion.nav
       className="fixed top-0 right-0 left-0 h-full bg-gray-900 z-50 flex justify-center items-center"
@@ -17,9 +19,13 @@ export default function Navigation({ setNavOpen }) {
         initial="initialLinkContainer"
         animate="animateLinkContainer"
       >
-        <p className="mb-10 text-white">About</p>
-        <p className="mb-10 text-white">Projects</p>
-        <p className="text-white">Contact</p>
+        {/* Nav links */}
+        <NavLinks
+          mobile={true}
+          setNavOpen={setNavOpen}
+          selected={selected}
+          setSelected={setSelected}
+        />
       </motion.div>
 
       {/* Animated sides */}
@@ -50,13 +56,13 @@ export default function Navigation({ setNavOpen }) {
 
       {/* Close button */}
       <motion.div
-        className="absolute top-0 right-0 pt-4 pr-6 text-white text-2xl"
+        className="absolute h-4 w-4 top-5 right-6"
         onClick={() => setNavOpen(false)}
         variants={mobileNavVariants}
         initial="initialBtn"
         animate="animateBtn"
       >
-        X
+        <BackIcon />
       </motion.div>
     </motion.nav>
   )

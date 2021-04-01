@@ -19,14 +19,33 @@ const Layout = ({ children }) => {
       : (html.style.overflow = "visible")
   }, [navOpen])
 
+  // Nav item selected
+  const [selected, setSelected] = useState(0)
+
+  const childrenWithProps = React.Children.map(children, child =>
+    React.cloneElement(child, {
+      setSelected,
+    })
+  )
   return (
     <>
-      <Header navOpen={navOpen} setNavOpen={setNavOpen} />
+      <Header
+        navOpen={navOpen}
+        setNavOpen={setNavOpen}
+        selected={selected}
+        setSelected={setSelected}
+      />
       <div className="flex flex-col min-h-full overflow-hidden">
         <AnimatePresence>
-          {navOpen && <Navigation setNavOpen={setNavOpen} />}
+          {navOpen && (
+            <Navigation
+              setNavOpen={setNavOpen}
+              selected={selected}
+              setSelected={setSelected}
+            />
+          )}
         </AnimatePresence>
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">{childrenWithProps}</main>
         <Footer />
       </div>
     </>

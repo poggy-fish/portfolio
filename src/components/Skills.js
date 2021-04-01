@@ -8,7 +8,7 @@ export default function Skills() {
   return (
     <InView threshold={0} triggerOnce={true}>
       {({ ref, inView }) => (
-        <section className="my-8 lg:my-14">
+        <section className="my-4 lg:my-14">
           <div className="container py-6 flex flex-col items-center">
             {/* Title */}
             <motion.h2

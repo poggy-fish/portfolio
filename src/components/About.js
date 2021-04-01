@@ -19,8 +19,9 @@ export default function About() {
       initial="initialSection"
       animate="animateSection"
       id="about"
+      className="pt-14"
     >
-      <div className="container full-vh py-4 flex flex-col justify-evenly md:justify-center lg:flex-row-reverse lg:justify-evenly lg:items-center relative">
+      <div className="container full-vh py-14 flex flex-col justify-evenly md:justify-center lg:flex-row-reverse lg:justify-evenly lg:items-center relative">
         {/* Profile Pic */}
 
         <motion.section
@@ -46,7 +47,7 @@ export default function About() {
         </motion.section>
 
         {/* Text/About section */}
-        <section className="flex flex-col items-center md:mt-12 lg:mt-0 lg:mr-12 lg:items-start">
+        <section className="flex flex-col items-center md:mt-6 lg:mt-0 lg:mr-12 lg:items-start">
           <p className="text-sm text-primary font-bold mb-2 tracking-wider ">
             Hey, my name is
           </p>

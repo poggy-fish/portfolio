@@ -34,8 +34,14 @@ export const navVariants = {
   underlineAnimate: {
     width: "100%",
     transition: {
-      duration: 0.5,
-      delay: 0.25,
+      duration: 0.35,
+      delay: 0.1,
+    },
+  },
+  exit: {
+    width: "0%",
+    transition: {
+      duration: 0.35,
     },
   },
 }
@@ -127,7 +133,7 @@ export const skillsVariants = {
 
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.05, delay: 0.15 },
+    transition: { staggerChildren: 0.05, delay: 0.05 },
   },
 
   // Title
@@ -139,7 +145,7 @@ export const skillsVariants = {
   animateTitle: {
     y: 0,
     opacity: 1,
-    transition: { ease: "linear", duration: 0.25, delay: 0.15 },
+    transition: { ease: "linear", duration: 0.25, delay: 0.1 },
   },
 }
 
@@ -167,7 +173,7 @@ export const projectVariants = {
 
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.25, delay: 0.15 },
+    transition: { staggerChildren: 0.25, delay: 0.05 },
   },
 
   // Title
@@ -179,7 +185,7 @@ export const projectVariants = {
   animateTitle: {
     y: 0,
     opacity: 1,
-    transition: { ease: "linear", duration: 0.25, delay: 0.15 },
+    transition: { ease: "linear", duration: 0.25, delay: 0.1 },
   },
 }
 
@@ -207,7 +213,6 @@ export const projectCardVariants = {
 }
 
 // Contact section
-
 export const contactVariants = {
   initialRight: {
     x: -50,

@@ -1,14 +1,24 @@
-import React, { useState } from "react"
+import React from "react"
+import NavLinks from "./NavLinks"
 import { NavIcon } from "../svg/svg"
-import { motion } from "framer-motion"
-import { headerVariants, navVariants } from "../framer/variants"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { motion, useViewportScroll, useTransform } from "framer-motion"
+import { headerVariants } from "../framer/variants"
 
-export default function Header({ navOpen, setNavOpen }) {
-  const [selected, setSelected] = useState(1)
+export default function Header({ navOpen, setNavOpen, selected, setSelected }) {
+  // Change header on scroll
+  const { scrollY } = useViewportScroll()
+  const headerShadow = useTransform(
+    scrollY,
+    [0, 10],
+    ["0 0 0 rgba(0, 0, 0, 0)", "0 -2px 7px rgba(0,0,0, 0.3)"]
+  )
+
   return (
-    <header id="top" className="overflow-hidden">
-      <div className="container h-14 flex justify-between items-center">
+    <motion.header
+      className="fixed top-0 left-0 w-full h-14 overflow-hidden z-50 bg-black transition-shadow ease-in-out duration-300"
+      style={{ boxShadow: headerShadow }}
+    >
+      <div className="container h-full flex justify-between items-center">
         <motion.h1
           className="text-3xl text-white"
           variants={headerVariants}
@@ -36,62 +46,13 @@ export default function Header({ navOpen, setNavOpen }) {
           initial="initialNav"
           animate="animateNav"
         >
-          <ul className="flex flex-row font-heading text-white">
-            {/* About link */}
-            <li className="mr-4 relative">
-              <AnchorLink to="/#top">About</AnchorLink>
-              {selected === 1 && (
-                <motion.div
-                  className="absolute w-full border-b-2 border-primary"
-                  variants={navVariants}
-                  initial="underlineInitial"
-                  animate="underlineAnimate"
-                ></motion.div>
-              )}
-            </li>
-
-            {/* Projects link */}
-            <li className="mr-4 relative">
-              <AnchorLink to="/#projects">
-                <button
-                  onMouseEnter={() => setSelected(2)}
-                  onMouseLeave={() => setSelected(1)}
-                >
-                  Projects
-                </button>
-              </AnchorLink>
-              {selected === 2 && (
-                <motion.div
-                  className="absolute w-full border-b-2 border-primary"
-                  variants={navVariants}
-                  initial="underlineInitial"
-                  animate="underlineAnimate"
-                ></motion.div>
-              )}
-            </li>
-
-            {/* Contact Link */}
-            <li className="relative">
-              <AnchorLink to="/#contact">
-                <button
-                  onMouseEnter={() => setSelected(3)}
-                  onMouseLeave={() => setSelected(1)}
-                >
-                  Contact
-                </button>
-              </AnchorLink>
-              {selected === 3 && (
-                <motion.div
-                  className="absolute w-full border-b-2 border-primary"
-                  variants={navVariants}
-                  initial="underlineInitial"
-                  animate="underlineAnimate"
-                ></motion.div>
-              )}
-            </li>
-          </ul>
+          <NavLinks
+            mobile={false}
+            selected={selected}
+            setSelected={setSelected}
+          />
         </motion.nav>
       </div>
-    </header>
+    </motion.header>
   )
 }

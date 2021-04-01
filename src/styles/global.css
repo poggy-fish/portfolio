@@ -32,6 +32,11 @@
     padding: 0.25rem 0.5rem !important;
   }
 
+  /* Top 12.5% (mobile nav color indicator) */
+  .top125 {
+    top: 12.5%;
+  }
+
   /* Disable arrows on number input */
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {

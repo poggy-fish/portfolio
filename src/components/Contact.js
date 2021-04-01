@@ -13,7 +13,7 @@ export default function Contact() {
       {({ ref, inView }) => (
         <section
           id="contact"
-          className="container py-6 flex flex-col items-center"
+          className="container mt-4 mb-2 flex flex-col items-center"
         >
           <h2 className="text-3xl inline-block relative mb-6 text-white">
             Contact Me
