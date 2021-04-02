@@ -106,7 +106,7 @@ export const arrowVariants = {
     opacity: 1,
     transition: {
       delay: 1.5,
-      duration: 0.2,
+      duration: 0.25,
     },
   },
 

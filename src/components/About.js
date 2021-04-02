@@ -5,13 +5,16 @@ import { motion, useViewportScroll, useTransform } from "framer-motion"
 import { aboutVariants, arrowVariants } from "../framer/variants"
 
 export default function About() {
-  // Get profile pic
-  const { image } = useStaticQuery(query)
-  const pic = getImage(image)
+  const { allAirtable } = useStaticQuery(query)
+
+  // Profile pic
+  const pic = getImage(allAirtable.nodes[0].data.aboutPic.localFiles[0])
+  // Data
+  const about = allAirtable.nodes[0].data
 
   // Framer motion - hide scroll down arrow on scroll
   const { scrollY } = useViewportScroll()
-  const arrowDisplay = useTransform(scrollY, [0, 20], ["1", "0"])
+  const arrowDisplay = useTransform(scrollY, [0, 5], ["3rem", "0rem"])
 
   return (
     <motion.section
@@ -49,23 +52,22 @@ export default function About() {
         {/* Text/About section */}
         <section className="flex flex-col items-center md:mt-6 lg:mt-0 lg:mr-12 lg:items-start">
           <p className="text-sm text-primary font-bold mb-2 tracking-wider ">
-            Hey, my name is
+            {about.aboutPrefix}
           </p>
           <h2 className="text-4xl lg:text-5xl mb-4 relative text-white">
-            Carlos Gauci
+            {about.aboutTitle}
+
             <div className="absolute w-full border-b-2 border-primary"></div>
           </h2>
           <p className="text-center lg:text-left md:max-w-md px-4 lg:px-0 text-white">
-            I'm a frontend developer from Malta. I specialize in building fast &
-            responsive websites and apps using JS frameworks and technologies
-            like React and Gatsby.
+            {about.aboutDesc}
           </p>
         </section>
         {/* Scroll down arrow */}
         <motion.div
-          className="hidden md:flex absolute bottom-0 left-2/4 w-12 h-12 mb-2 transform -translate-x-1/2 flex-col justify-center items-center"
+          className="hidden md:flex absolute bottom-0 left-2/4 w-12 h-12 mb-2 transform -translate-x-1/2 flex-col justify-center items-center overflow-hidden"
           style={{
-            opacity: arrowDisplay,
+            height: arrowDisplay,
           }}
           variants={arrowVariants}
           initial="containerInitial"
@@ -84,17 +86,28 @@ export default function About() {
   )
 }
 
-// Profile pic query
+// Airtable query
 const query = graphql`
   {
-    image: file(relativePath: { eq: "profilepic.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(
-          formats: [AUTO, WEBP, AVIF]
-          layout: FULL_WIDTH
-          quality: 85
-          sizes: "400"
-        )
+    allAirtable(filter: { table: { eq: "About" } }) {
+      nodes {
+        data {
+          aboutPrefix
+          aboutTitle
+          aboutDesc
+          aboutPic {
+            localFiles {
+              childImageSharp {
+                gatsbyImageData(
+                  formats: [AUTO, WEBP, AVIF]
+                  layout: FULL_WIDTH
+                  quality: 85
+                  sizes: "400"
+                )
+              }
+            }
+          }
+        }
       }
     }
   }

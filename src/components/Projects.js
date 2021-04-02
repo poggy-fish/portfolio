@@ -52,8 +52,8 @@ export default function Projects() {
 const query = graphql`
   {
     allAirtable(
-      filter: { data: { enabled: { eq: true } } }
-      sort: { order: ASC, fields: data___order }
+      filter: { data: { enabled: { eq: true } }, table: { eq: "Projects" } }
+      sort: { fields: data___order, order: ASC }
     ) {
       nodes {
         data {
