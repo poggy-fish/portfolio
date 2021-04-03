@@ -51,6 +51,12 @@
   input[type="number"] {
     -moz-appearance: textfield;
   }
+
+  a,
+  button,
+  svg {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @layer base {
