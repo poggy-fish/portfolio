@@ -1,15 +1,10 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import ProjectCard from "./ProjectCard"
 import { motion } from "framer-motion"
 import { projectVariants } from "../framer/variants"
 import { InView } from "react-intersection-observer"
 
-export default function Projects() {
-  const {
-    allAirtable: { nodes },
-  } = useStaticQuery(query)
-
+export default function Projects({ projects, skills }) {
   return (
     <InView threshold={0} triggerOnce={true}>
       {({ ref, inView }) => (
@@ -33,11 +28,12 @@ export default function Projects() {
               initial="hidden"
               animate={inView && "show"}
             >
-              {nodes.map(project => {
+              {projects.map(project => {
                 return (
                   <ProjectCard
                     key={project.data.order}
                     project={project.data}
+                    skills={skills}
                   />
                 )
               })}
@@ -48,35 +44,3 @@ export default function Projects() {
     </InView>
   )
 }
-
-const query = graphql`
-  {
-    allAirtable(
-      filter: { data: { enabled: { eq: true } }, table: { eq: "Projects" } }
-      sort: { fields: data___order, order: ASC }
-    ) {
-      nodes {
-        data {
-          title
-          order
-          description
-          site
-          github
-          skills
-          image {
-            localFiles {
-              childImageSharp {
-                gatsbyImageData(
-                  layout: FULL_WIDTH
-                  sizes: "500"
-                  formats: [AUTO, WEBP, AVIF]
-                  quality: 80
-                )
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`

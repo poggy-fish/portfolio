@@ -1,10 +1,9 @@
 import React from "react"
-import { skills } from "../data/skills"
 import { motion } from "framer-motion"
 import { skillsVariants, skillIconVariants } from "../framer/variants"
 import { InView } from "react-intersection-observer"
 
-export default function Skills() {
+export default function Skills({ skills }) {
   return (
     <InView threshold={0} triggerOnce={true}>
       {({ ref, inView }) => (
@@ -29,16 +28,16 @@ export default function Skills() {
               initial="hidden"
               animate={inView && "show"}
             >
-              {/* Skill list from data/skills.js */}
+              {/* Filter and map skills data from graphql (some skills are only shown on project card) */}
               {skills
-                .filter(skill => !skill.hidden)
-                .sort((a, b) => a.id - b.id)
+                .filter(skill => skill.data.published === true)
                 .map(skill => {
+                  const { order, link, svg, name } = skill.data
                   return (
                     <motion.a
-                      key={skill.id}
+                      key={order}
                       className="my-4 mx-2 lg:mr-0 lg:mx-8 w-14 block text-xs text-white focus:outline-none focus:text-primary"
-                      href={skill.url}
+                      href={link}
                       target="_blank"
                       rel="noopener noreferrer"
                       variants={skillIconVariants}
@@ -54,16 +53,15 @@ export default function Skills() {
                         <motion.div
                           className="w-14 h-14 flex items-center justify-center p-2 rounded-full bg-gray-800"
                           whileHover={{ backgroundColor: "rgba(64, 76, 94)" }}
-                        >
-                          {skill.svg}
-                        </motion.div>
+                          dangerouslySetInnerHTML={{ __html: svg }}
+                        />
 
                         {/* Name */}
                         <button
                           className="mt-2 font-body inherit focus:outline-none"
                           tabIndex={-1}
                         >
-                          {skill.name}
+                          {name}
                         </button>
                       </motion.div>
                     </motion.a>

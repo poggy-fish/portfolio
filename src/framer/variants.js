@@ -34,14 +34,14 @@ export const navVariants = {
   underlineAnimate: {
     width: "100%",
     transition: {
-      duration: 0.35,
-      delay: 0.1,
+      duration: 0.2,
+      delay: 0.05,
     },
   },
   exit: {
     width: "0%",
     transition: {
-      duration: 0.35,
+      duration: 0.2,
     },
   },
 }
@@ -229,11 +229,11 @@ export const contactVariants = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
-      delay: 0.15,
+      duration: 0.35,
+      delay: 0.1,
 
       border: {
-        delay: 0.5,
+        delay: 0.35,
         duration: 0.5,
       },
     },
@@ -249,7 +249,7 @@ export const contactVariants = {
 
     transition: {
       border: {
-        delay: 0.65,
+        delay: 0.45,
         duration: 0.5,
       },
     },
@@ -268,11 +268,11 @@ export const contactVariants = {
     border: "2px solid rgba(255, 156, 68, 1)",
 
     transition: {
-      duration: 0.5,
-      delay: 0.15,
+      duration: 0.35,
+      delay: 0.1,
 
       border: {
-        delay: 0.75,
+        delay: 0.55,
         duration: 0.5,
       },
     },
@@ -291,7 +291,7 @@ export const contactFormVariants = {
     y: 0,
     transition: {
       delay: 0.5,
-      duration: 0.5,
+      duration: 0.35,
     },
   },
 }

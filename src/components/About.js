@@ -1,16 +1,13 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { motion, useViewportScroll, useTransform } from "framer-motion"
 import { aboutVariants, arrowVariants } from "../framer/variants"
 
-export default function About() {
-  const { allAirtable } = useStaticQuery(query)
+export default function About({ aboutInfo }) {
+  const about = aboutInfo[0].data
 
   // Profile pic
-  const pic = getImage(allAirtable.nodes[0].data.aboutPic.localFiles[0])
-  // Data
-  const about = allAirtable.nodes[0].data
+  const pic = getImage(about.aboutPic.localFiles[0])
 
   // Framer motion - hide scroll down arrow on scroll
   const { scrollY } = useViewportScroll()
@@ -85,30 +82,3 @@ export default function About() {
     </motion.section>
   )
 }
-
-// Airtable query
-const query = graphql`
-  {
-    allAirtable(filter: { table: { eq: "About" } }) {
-      nodes {
-        data {
-          aboutPrefix
-          aboutTitle
-          aboutDesc
-          aboutPic {
-            localFiles {
-              childImageSharp {
-                gatsbyImageData(
-                  formats: [AUTO, WEBP, AVIF]
-                  layout: FULL_WIDTH
-                  quality: 85
-                  sizes: "400"
-                )
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`

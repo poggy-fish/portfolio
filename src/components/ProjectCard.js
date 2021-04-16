@@ -1,11 +1,10 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { skills } from "../data/skills"
 import { motion } from "framer-motion"
 import { projectCardVariants } from "../framer/variants"
 import ReactTooltip from "react-tooltip"
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, skills }) {
   // Destructure project
   const {
     title,
@@ -16,12 +15,12 @@ export default function ProjectCard({ project }) {
     image,
   } = project
 
-  //   Get image
+  //   Get project image
   const siteImage = getImage(image.localFiles[0].childImageSharp)
 
-  //   Get the skill icons we need
+  //   Get the skill icons we need for this project
   const skillIcons = skills.filter(item => {
-    return projectSkills.includes(item.name)
+    return projectSkills.includes(item.data.name)
   })
 
   return (
@@ -67,38 +66,41 @@ export default function ProjectCard({ project }) {
 
         {/* Icons */}
         <section className="flex flex-row flex-wrap">
-          {skillIcons.map(icon => {
-            return (
-              <a
-                key={icon.id}
-                href={icon.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={icon.name}
-                tabIndex={-1}
-              >
-                <motion.div
-                  className="w-10 h-10 flex justify-center items-center mr-2 sm:mr-3 my-1 bg-gray-700 rounded-full p-2 cursor-pointer duration-100 focus:outline-none"
-                  data-tip={icon.name}
-                  variants={projectCardVariants}
-                  initial="initial"
-                  whileHover="hover"
-                  whileFocus="hover"
-                  tabIndex={0}
+          {skillIcons
+            .sort((a, b) => a.data.cardOrder - b.data.cardOrder)
+            .map(icon => {
+              const { order, link, name, svg } = icon.data
+              return (
+                <a
+                  key={order}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  tabIndex={-1}
                 >
-                  {icon.svg}
-                </motion.div>
-                <ReactTooltip
-                  place="bottom"
-                  type="dark"
-                  effect="solid"
-                  offset={{ bottom: -5 }}
-                  className="react-tooltip"
-                  backgroundColor="#111"
-                />
-              </a>
-            )
-          })}
+                  <motion.div
+                    className="w-10 h-10 flex justify-center items-center mr-2 sm:mr-3 my-1 bg-gray-700 rounded-full p-2 cursor-pointer duration-100 focus:outline-none"
+                    data-tip={name}
+                    variants={projectCardVariants}
+                    initial="initial"
+                    whileHover="hover"
+                    whileFocus="hover"
+                    tabIndex={0}
+                    dangerouslySetInnerHTML={{ __html: svg }}
+                  />
+
+                  <ReactTooltip
+                    place="bottom"
+                    type="dark"
+                    effect="solid"
+                    offset={{ bottom: -5 }}
+                    className="react-tooltip"
+                    backgroundColor="#111"
+                  />
+                </a>
+              )
+            })}
         </section>
       </section>
     </motion.article>
