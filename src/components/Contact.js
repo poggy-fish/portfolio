@@ -22,7 +22,7 @@ export default function Contact() {
           <section className="flex my-4" ref={ref}>
             {/* Mail icon / link */}
             <a
-              href="mailto:carlosgauci@gmail.com"
+              href="mailto:contact@carlosgauci.com"
               tabIndex={-1}
               className="focus:outline-none"
             >
