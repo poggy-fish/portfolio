@@ -23,7 +23,7 @@ export default function Skills({ skills }) {
 
             {/* Icons section */}
             <motion.section
-              className="flex flex-row flex-wrap justify-center max-w-3xl"
+              className="flex flex-row flex-wrap justify-center max-w-4xl"
               variants={skillsVariants}
               initial="hidden"
               animate={inView && "show"}

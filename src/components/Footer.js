@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="w-full py-6">
       <section className="container flex flex-col items-center">
-        <p className="text-white text-xs mb-1">© Carlos Gauci 2021</p>
+        <p className="text-white text-xs mb-1">Carlos Gauci © 2021</p>
         <p className="text-white text-xs">Website powered by:</p>
         <section className="flex flex-row flex-wrap">
           {skillIcons.map(skill => {
