@@ -308,7 +308,7 @@ export const mobileNavVariants = {
     height: "100%",
 
     transition: {
-      duration: 0.15,
+      duration: 0.125,
       ease: "linear",
     },
   },
@@ -317,8 +317,8 @@ export const mobileNavVariants = {
     width: "100%",
 
     transition: {
-      duration: 0.15,
-      delay: 0.25,
+      duration: 0.125,
+      delay: 0.125,
       ease: "linear",
     },
   },
@@ -327,8 +327,8 @@ export const mobileNavVariants = {
     height: "100%",
 
     transition: {
-      duration: 0.15,
-      delay: 0.5,
+      duration: 0.125,
+      delay: 0.25,
       ease: "linear",
     },
   },
@@ -337,8 +337,8 @@ export const mobileNavVariants = {
     width: "100%",
 
     transition: {
-      duration: 0.15,
-      delay: 0.75,
+      duration: 0.125,
+      delay: 0.375,
       ease: "linear",
     },
   },
@@ -351,15 +351,15 @@ export const mobileNavVariants = {
   showBG: {
     backgroundColor: "rgba(17, 24, 39, 1)",
     transition: {
-      delay: 0.9,
-      duration: 0.25,
+      delay: 0.5,
+      duration: 0.2,
     },
   },
 
   exit: {
     x: "100%",
     transition: {
-      duration: 0.25,
+      duration: 0.2,
     },
   },
 
@@ -371,7 +371,7 @@ export const mobileNavVariants = {
   animateLinkContainer: {
     opacity: 1,
     transition: {
-      delay: 1.2,
+      delay: 0.6,
       staggerChildren: 0.25,
     },
   },
@@ -383,7 +383,7 @@ export const mobileNavVariants = {
   animateBtn: {
     opacity: 1,
     transition: {
-      delay: 0.9,
+      delay: 0.6,
     },
   },
 }
