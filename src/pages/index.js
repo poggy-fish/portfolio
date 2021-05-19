@@ -11,7 +11,7 @@ const IndexPage = ({ setSelected, data }) => {
   const { about, projects, skills } = data
   return (
     <>
-      <SEO title="Carlos Gauci" />
+      <SEO title="Carlos Gauci | Front-End Developer" />
       {/* About & Skills */}
       {/* InView components to control nav animation with intersection observer */}
       <InView
