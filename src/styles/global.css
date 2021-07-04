@@ -6,17 +6,6 @@
 @tailwind utilities;
 
 @layer utilities {
-  body {
-    background-color: rgb(3, 11, 22);
-  }
-
-  html,
-  body,
-  #___gatsby,
-  #gatsby-focus-wrapper {
-    height: 100%;
-  }
-
   /* 100vh minus header */
   .full-vh {
     min-height: calc(100vh - 3.5rem);
@@ -60,6 +49,24 @@
 }
 
 @layer base {
+  body {
+    background-color: rgb(3, 11, 22);
+  }
+
+  html,
+  body,
+  #___gatsby,
+  #gatsby-focus-wrapper {
+    height: 100%;
+  }
+
+  html {
+    /* Style scrollbar */
+    @apply scrollbar-thin;
+    @apply scrollbar-track-black;
+    @apply scrollbar-thumb-primaryDark;
+  }
+
   h1,
   h2,
   h3,

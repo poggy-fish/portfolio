@@ -25,7 +25,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "rgb(255, 156, 68)",
-        primarybg: "rgba(255, 156, 68, 0.92)",
+        primaryDark: "rgba(255, 156, 68, 0.5)",
         black: "rgb(3,11,22)",
         textwhite: "rgba(255,255,255,0.9)",
       },
@@ -34,5 +34,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 }
