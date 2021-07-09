@@ -39,7 +39,7 @@ export default function ProjectCard({ project, skills }) {
       </div>
 
       {/* Text Section */}
-      <section className="p-4 flex flex-col card-height">
+      <section className="p-4 flex flex-col">
         {/* Title & Desc */}
         <h3 className="text-white mb-2 text-xl">{title}</h3>
         <p className="text-white mb-4">{description}</p>
